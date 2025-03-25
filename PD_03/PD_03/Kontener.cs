@@ -2,14 +2,13 @@
 
 public class Kontener
 {
-    private int masa; //w kg
-    private int wysokosc; //w cm
-    private int wagaWlasna; //w kg (waga samego kontenera)
-    private int glebokosc; //w cm
-    private String numerSeryjny; //ma zazcynac sie od KON-rodzaj_kontenera-liczba
-    private int maxLadownosc; //w kg
+    private int masa; // w kg
+    private int wysokosc; // w cm
+    private int wagaWlasna; // w kg (waga samego kontenera)
+    private int glebokosc; // w cm
+    private string numerSeryjny; // Numer seryjny
+    private int maxLadownosc; // w kg
     private static int generator = 0;
-
 
     public Kontener(int masa, int wysokosc, int wagaWlasna, int glebokosc, int maxLadownosc)
     {
@@ -17,8 +16,7 @@ public class Kontener
         this.wysokosc = wysokosc;
         this.wagaWlasna = wagaWlasna;
         this.glebokosc = glebokosc;
-        this.numerSeryjny = generateNumerSeryjny();
-        generateNumerSeryjny("K");
+        this.numerSeryjny = generateNumerSeryjny(); // Numer seryjny domyślny
         this.maxLadownosc = maxLadownosc;
     }
 
@@ -28,13 +26,13 @@ public class Kontener
         generator++;
         return wynik;
     }
-    public void generateNumerSeryjny(String typ)
+
+    public void generateNumerSeryjny(string typ)
     {
-        String wynik = "KON-" + typ + "-" + generator.ToString();
-        this.numerSeryjny = wynik;
+        this.numerSeryjny = "KON-" + typ + "-" + generator.ToString();
     }
 
-    public String getNumerSeryjny()
+    public string getNumerSeryjny()
     {
         return numerSeryjny;
     }
@@ -52,11 +50,27 @@ public class Kontener
         this.masa = masa;
         checkPojemnosc();
     }
+
     public void rozladuj()
     {
         this.masa = 0;
     }
-    
+
+    // Getter dla masy
+    public int GetMasa()
+    {
+        return masa;
+    }
+
+    // Setter dla masy
+    public void SetMasa(int nowaMasa)
+    {
+        if (nowaMasa >= 0)
+        {
+            masa = nowaMasa;
+        }
+    }
+
     public override string ToString()
     {
         return "Kontener: " + numerSeryjny +
@@ -65,7 +79,5 @@ public class Kontener
                "\n waga wlasna " + wagaWlasna +
                "\n glebokosc " + glebokosc +
                "\n max pojemnosc " + maxLadownosc;
-        
     }
-    
 }
