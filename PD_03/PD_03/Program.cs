@@ -11,19 +11,20 @@ class Program
         Kontener k1 = new Kontener(10, 11, 12, 13, 14);
         k1.zaladuj(10);
         Console.WriteLine(k1);
-        
-        Kontener k2 = new Kontener(15, 16, 17, 18, 19);
-        k2.zaladuj(18);
-        Console.WriteLine(k2);
 
-        LKontener lk3 = new LKontener(10, 11, 12, 13, 14,true);
-        Console.WriteLine(lk3);
+        LKontener lk2 = new LKontener(10, 11, 12, 13, 14,true);
+        Console.WriteLine(lk2);
 
-        GKontener gk4 = new GKontener(20, 15, 2, 10, 100, 30,  true);
-        Console.WriteLine(gk4);
-        gk4.zaladuj(70);
-        gk4.rozladuj();
-        Console.WriteLine(gk4);
+        GKontener gk3 = new GKontener(20, 15, 2, 10, 100, 30,  true);
+        Console.WriteLine("Przed rozladowaniem");
+        gk3.zaladuj(70);
+        Console.WriteLine(gk3);
+        Console.WriteLine("Po rozladowaniu");
+        gk3.rozladuj();
+        Console.WriteLine(gk3);
+
+        CKontener ck4 = new CKontener(20, 20, 20, 20, 20, "Bananas", 14);
+        Console.WriteLine(ck4);
         
     }
 }
