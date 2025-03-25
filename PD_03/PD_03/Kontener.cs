@@ -18,6 +18,7 @@ public class Kontener
         this.wagaWlasna = wagaWlasna;
         this.glebokosc = glebokosc;
         this.numerSeryjny = generateNumerSeryjny();
+        generateNumerSeryjny("K");
         this.maxLadownosc = maxLadownosc;
     }
 
@@ -26,6 +27,11 @@ public class Kontener
         String wynik = "KON-typ-" + generator.ToString();
         generator++;
         return wynik;
+    }
+    public void generateNumerSeryjny(String typ)
+    {
+        String wynik = "KON-" + typ + "-" + generator.ToString();
+        this.numerSeryjny = wynik;
     }
 
     public String getNumerSeryjny()
@@ -46,14 +52,20 @@ public class Kontener
         this.masa = masa;
         checkPojemnosc();
     }
+    public void rozladuj()
+    {
+        this.masa = 0;
+    }
     
     public override string ToString()
     {
         return "Kontener: " + numerSeryjny +
+               "\n masa " + masa +
                "\n wysokosc " + wysokosc +
                "\n waga wlasna " + wagaWlasna +
                "\n glebokosc " + glebokosc +
                "\n max pojemnosc " + maxLadownosc;
         
     }
+    
 }

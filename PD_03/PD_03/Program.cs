@@ -9,15 +9,14 @@ class Program
 
 
         Kontener k1 = new Kontener(10, 11, 12, 13, 14);
-        Kontener k2 = new Kontener(15, 16, 17, 18, 19);
-        Console.WriteLine(k1.getNumerSeryjny());
-        Console.WriteLine(k2.getNumerSeryjny());
-        
         k1.zaladuj(10);
         Console.WriteLine(k1);
         
-        k2.zaladuj(100);
+        Kontener k2 = new Kontener(15, 16, 17, 18, 19);
+        k2.zaladuj(18);
         Console.WriteLine(k2);
 
+        LKontener lk3 = new LKontener(10, 11, 12, 13, 14,true);
+        Console.WriteLine(lk3);
     }
 }
