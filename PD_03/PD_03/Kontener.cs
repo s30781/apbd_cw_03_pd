@@ -2,12 +2,12 @@
 
 public class Kontener
 {
-    private int masa; // w kg
-    private int wysokosc; // w cm
-    private int wagaWlasna; // w kg (waga samego kontenera)
-    private int glebokosc; // w cm
-    private string numerSeryjny; // Numer seryjny
-    private int maxLadownosc; // w kg
+    private int masa;
+    private int wysokosc;
+    private int wagaWlasna;
+    private int glebokosc;
+    private string numerSeryjny;
+    private int maxLadownosc;
     private static int generator = 0;
 
     public Kontener(int masa, int wysokosc, int wagaWlasna, int glebokosc, int maxLadownosc)
@@ -16,7 +16,8 @@ public class Kontener
         this.wysokosc = wysokosc;
         this.wagaWlasna = wagaWlasna;
         this.glebokosc = glebokosc;
-        this.numerSeryjny = generateNumerSeryjny(); // Numer seryjny domyślny
+        this.numerSeryjny = generateNumerSeryjny();
+        generateNumerSeryjny("K");
         this.maxLadownosc = maxLadownosc;
     }
 

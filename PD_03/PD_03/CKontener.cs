@@ -3,9 +3,9 @@
     public class CKontener : Kontener
     {
         private string rodzajProduktu;
-        private double temperatura; // Temperatura w °C
+        private double temperatura;
 
-        // Słownik przechowujący wymagane temperatury dla różnych produktów
+        //slownik przedmiot,temp
         private static readonly Dictionary<string, double> wymaganeTemperatury = new Dictionary<string, double>
         {
             { "Bananas", 13.3 },
@@ -22,12 +22,12 @@
         public CKontener(int masa, int wysokosc, int wagaWlasna, int glebokosc, int maxLadownosc, string rodzajProduktu, double temperatura)
             : base(masa, wysokosc, wagaWlasna, glebokosc, maxLadownosc)
         {
-            // Sprawdzamy, czy podany produkt jest w słowniku
+            generateNumerSeryjny("C");
+            //sprawdzamy czy w slowniku jest rodukt
             if (wymaganeTemperatury.ContainsKey(rodzajProduktu))
             {
-                this.rodzajProduktu = rodzajProduktu;
-
-                // Sprawdzamy, czy podana temperatura nie jest niższa niż wymagania dla tego produktu
+                this.rodzajProduktu = rodzajProduktu; 
+                //patrzymy czy temp nie ejst za niska
                 if (temperatura >= wymaganeTemperatury[rodzajProduktu])
                 {
                     this.temperatura = temperatura;
@@ -53,7 +53,7 @@
             return temperatura;
         }
 
-        // Nadpisujemy metodę ToString, aby dodać informacje o produkcie i temperaturze
+        //tostring dla kontenrea by wypisac info o nim
         public override string ToString()
         {
             return base.ToString() +
